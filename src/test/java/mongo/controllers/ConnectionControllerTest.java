@@ -22,6 +22,6 @@ class ConnectionControllerTest {
     @Test
     public void live() throws Exception {
         this.mockMvc.perform(get("/live")).andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("i'm live now :)")));
+                .andExpect(content().string(containsString("live now :)")));
     }
 }

@@ -1,0 +1,16 @@
+language: java
+jdk:
+  - openjdk9
+
+services:
+  - mongodb
+
+sudo: true
+
+before_script:
+  - sleep 15
+  - mongo mydb_test --eval 'db.createUser({user:"travis",pwd:"test",roles:["readWrite"]});'
+
+script:
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn test -B

@@ -10,6 +10,6 @@ public class ConnectionController {
 
     @GetMapping(path = "/live")
     public ResponseEntity<String> live() {
-        return new ResponseEntity<>("i'm live now :)", HttpStatus.OK);
+        return new ResponseEntity<>("im live now :)", HttpStatus.OK);
     }
 }
